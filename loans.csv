@@ -1,0 +1,51 @@
+loan_id,customer_id,account_id,loan_type,loan_amount,outstanding_balance,interest_rate,origination_date,maturity_date,payment_frequency,collateral_value,risk_tier,loan_status,days_past_due,industry_sector,region
+3001,1,1003,Commercial Real Estate,5000000.00,4500000.00,0.045,2020-02-01,2030-02-01,Monthly,6000000.00,Low,Active,0,Technology,North America
+3002,2,1004,Equipment Financing,2500000.00,2000000.00,0.055,2019-03-22,2029-03-22,Monthly,3000000.00,Medium,Active,0,Manufacturing,North America
+3003,6,1012,International Trade,8000000.00,7200000.00,0.050,2019-12-03,2029-12-03,Monthly,10000000.00,Medium,Active,0,Technology,Europe
+3004,7,1014,Energy Project,12000000.00,10800000.00,0.040,2018-05-20,2033-05-20,Monthly,15000000.00,Low,Active,0,Energy,North America
+3005,11,1021,International Trade,15000000.00,13500000.00,0.052,2019-07-30,2029-07-30,Monthly,18000000.00,Medium,Active,0,Trade,Asia Pacific
+3006,12,1024,Real Estate Development,8000000.00,7200000.00,0.055,2020-11-05,2030-11-05,Monthly,10000000.00,High,Active,0,Real Estate,North America
+3007,16,1033,International Shipping,12000000.00,10800000.00,0.048,2019-09-22,2029-09-22,Monthly,15000000.00,Medium,Active,0,Logistics,Europe
+3008,17,1035,Restaurant Chain,6000000.00,5400000.00,0.052,2020-02-28,2030-02-28,Monthly,7500000.00,Medium,Active,0,Food & Beverage,North America
+3009,20,1040,Pharmaceutical Research,20000000.00,18000000.00,0.040,2018-10-03,2033-10-03,Monthly,25000000.00,Low,Active,0,Healthcare,North America
+3010,21,1043,Construction,1800000.00,1620000.00,0.065,2020-07-19,2030-07-19,Monthly,2200000.00,High,Active,0,Construction,North America
+3011,23,1046,Oil & Gas Exploration,30000000.00,27000000.00,0.045,2018-01-30,2033-01-30,Monthly,37500000.00,High,Active,0,Energy,North America
+3012,25,1049,Regional Banking,15000000.00,13500000.00,0.042,2019-05-08,2034-05-08,Monthly,18750000.00,Low,Active,0,Financial Services,North America
+3013,26,1051,Agricultural,8000000.00,7200000.00,0.050,2020-08-14,2030-08-14,Monthly,10000000.00,Medium,Active,0,Agriculture,North America
+3014,28,1053,Retail Chain,12000000.00,10800000.00,0.052,2019-12-15,2029-12-15,Monthly,15000000.00,Medium,Active,0,Retail,North America
+3015,31,1055,European Retail,25000000.00,22500000.00,0.048,2019-03-10,2034-03-10,Monthly,31250000.00,Medium,Active,0,Retail,Europe
+3016,32,1056,Hedge Fund,200000000.00,180000000.00,0.035,2016-09-05,2036-09-05,Monthly,250000000.00,High,Active,0,Investment,North America
+3017,34,1058,Mining Operations,40000000.00,36000000.00,0.055,2018-12-07,2033-12-07,Monthly,50000000.00,High,Active,0,Mining,North America
+3018,36,1060,Telecommunications,35000000.00,31500000.00,0.040,2018-04-12,2033-04-12,Monthly,43750000.00,Low,Active,0,Telecommunications,North America
+3019,38,1062,Manufacturing,18000000.00,16200000.00,0.050,2019-06-15,2029-06-15,Monthly,22500000.00,Medium,Active,0,Manufacturing,North America
+3020,40,1064,Asian Manufacturing,22000000.00,19800000.00,0.052,2019-08-28,2029-08-28,Monthly,27500000.00,Medium,Active,0,Manufacturing,Asia Pacific
+3021,41,1065,Real Estate Investment,15000000.00,13500000.00,0.050,2020-01-10,2030-01-10,Monthly,18750000.00,Medium,Active,0,Real Estate,North America
+3022,44,1068,Biotechnology,25000000.00,22500000.00,0.045,2019-11-18,2034-11-18,Monthly,31250000.00,High,Active,0,Healthcare,North America
+3023,47,1071,Renewable Energy,18000000.00,16200000.00,0.040,2020-09-22,2035-09-22,Monthly,22500000.00,Low,Active,0,Energy,North America
+3024,50,1074,Food Processing,10000000.00,9000000.00,0.050,2020-12-08,2030-12-08,Monthly,12500000.00,Medium,Active,0,Food & Beverage,North America
+3025,4,1008,Small Business,750000.00,675000.00,0.065,2021-06-10,2031-06-10,Monthly,900000.00,Medium,Active,0,Food & Beverage,North America
+3026,5,1010,Professional Services,1200000.00,1080000.00,0.060,2020-09-15,2030-09-15,Monthly,1500000.00,Low,Active,0,Consulting,North America
+3027,9,1017,Retail,450000.00,405000.00,0.070,2022-01-25,2032-01-25,Monthly,540000.00,Medium,Active,0,Retail,North America
+3028,10,1019,Healthcare,2000000.00,1800000.00,0.055,2020-04-18,2030-04-18,Monthly,2500000.00,Low,Active,0,Healthcare,North America
+3029,14,1028,Startup,300000.00,270000.00,0.080,2023-03-08,2033-03-08,Monthly,360000.00,High,Active,0,Technology,North America
+3030,19,1038,Automotive,350000.00,315000.00,0.070,2021-11-12,2031-11-12,Monthly,420000.00,Medium,Active,0,Automotive,North America
+3031,22,1044,Marketing,800000.00,720000.00,0.065,2021-04-05,2031-04-05,Monthly,1000000.00,Medium,Active,0,Marketing,North America
+3032,29,1052,Technology,1500000.00,1350000.00,0.055,2020-06-22,2030-06-22,Monthly,1875000.00,Low,Active,0,Technology,North America
+3033,30,1054,Transportation,1200000.00,1080000.00,0.060,2021-02-18,2031-02-18,Monthly,1500000.00,Medium,Active,0,Transportation,North America
+3034,33,1057,Healthcare,600000.00,540000.00,0.065,2021-08-30,2031-08-30,Monthly,720000.00,Low,Active,0,Healthcare,North America
+3035,37,1059,Legal Services,900000.00,810000.00,0.060,2020-10-08,2030-10-08,Monthly,1125000.00,Low,Active,0,Legal,North America
+3036,39,1061,Financial Services,2500000.00,2250000.00,0.050,2020-03-20,2030-03-20,Monthly,3125000.00,Low,Active,0,Financial Services,North America
+3037,43,1066,Retail,400000.00,360000.00,0.070,2021-12-05,2031-12-05,Monthly,480000.00,Medium,Active,0,Retail,North America
+3038,45,1069,Construction,2200000.00,1980000.00,0.065,2020-05-12,2030-05-12,Monthly,2750000.00,Medium,Active,0,Construction,North America
+3039,46,1070,Consulting,1100000.00,990000.00,0.060,2021-01-15,2031-01-15,Monthly,1375000.00,Low,Active,0,Consulting,North America
+3040,3,1006,Wealth Management,15000000.00,13500000.00,0.035,2018-11-08,2033-11-08,Monthly,18750000.00,Low,Active,0,Investment,North America
+3041,8,1016,Institutional Investment,50000000.00,45000000.00,0.040,2017-08-12,2032-08-12,Monthly,62500000.00,Low,Active,0,Investment,North America
+3042,18,1037,Private Equity,75000000.00,67500000.00,0.040,2017-04-15,2032-04-15,Monthly,93750000.00,Low,Active,0,Investment,North America
+3043,24,1048,University Endowment,100000000.00,90000000.00,0.040,2015-06-12,2035-06-12,Monthly,125000000.00,Low,Active,0,Education,North America
+3044,35,1063,Charitable Foundation,15000000.00,13500000.00,0.035,2019-01-25,2034-01-25,Monthly,18750000.00,Low,Active,0,Non-Profit,North America
+3045,42,1067,Family Office,50000000.00,45000000.00,0.035,2018-07-03,2033-07-03,Monthly,62500000.00,Low,Active,0,Investment,North America
+3046,48,1072,Pension Fund,80000000.00,72000000.00,0.040,2017-02-14,2032-02-14,Monthly,100000000.00,Low,Active,0,Investment,North America
+3047,13,1025,Personal Banking,2500000.00,2250000.00,0.045,2019-02-14,2034-02-14,Monthly,3125000.00,Low,Active,0,Personal,North America
+3048,15,1030,Government,25000000.00,22500000.00,0.035,2016-12-01,2031-12-01,Monthly,31250000.00,Low,Active,0,Government,North America
+3049,27,1057,Insurance,50000000.00,45000000.00,0.040,2017-11-20,2032-11-20,Monthly,62500000.00,Low,Active,0,Insurance,North America
+3050,49,1073,Credit Union,12000000.00,10800000.00,0.042,2019-10-05,2034-10-05,Monthly,15000000.00,Low,Active,0,Financial Services,North America 
