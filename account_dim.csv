@@ -1,0 +1,51 @@
+account_id,customer_id,account_type,product_line,account_status,balance,open_date,last_transaction_date,interest_rate,overdraft_limit,account_manager,region
+1001,1,Checking,Commercial Banking,Active,1250000.00,2020-01-15,2024-01-15,0.01,50000.00,John Smith,North America
+1002,1,Savings,Commercial Banking,Active,2500000.00,2020-01-15,2024-01-15,0.025,0.00,John Smith,North America
+1003,1,Loan,Commercial Banking,Active,-5000000.00,2020-02-01,2024-01-15,0.045,0.00,John Smith,North America
+1004,2,Checking,Commercial Banking,Active,750000.00,2019-03-22,2024-01-14,0.01,25000.00,Sarah Johnson,North America
+1005,2,Savings,Commercial Banking,Active,1200000.00,2019-03-22,2024-01-14,0.025,0.00,Sarah Johnson,North America
+1006,3,Investment,Wealth Management,Active,15000000.00,2018-11-08,2024-01-15,0.035,0.00,Michael Brown,North America
+1007,3,Trust,Wealth Management,Active,5000000.00,2018-11-08,2024-01-15,0.03,0.00,Michael Brown,North America
+1008,4,Checking,Small Business Banking,Active,150000.00,2021-06-10,2024-01-13,0.01,10000.00,Lisa Davis,North America
+1009,4,Savings,Small Business Banking,Active,300000.00,2021-06-10,2024-01-13,0.02,0.00,Lisa Davis,North America
+1010,5,Checking,Small Business Banking,Active,250000.00,2020-09-15,2024-01-15,0.01,15000.00,Robert Wilson,North America
+1011,5,Savings,Small Business Banking,Active,500000.00,2020-09-15,2024-01-15,0.02,0.00,Robert Wilson,North America
+1012,6,Checking,Commercial Banking,Active,2000000.00,2019-12-03,2024-01-14,0.01,100000.00,Emma Taylor,Europe
+1013,6,Savings,Commercial Banking,Active,4000000.00,2019-12-03,2024-01-14,0.025,0.00,Emma Taylor,Europe
+1014,7,Checking,Commercial Banking,Active,3000000.00,2018-05-20,2024-01-15,0.01,150000.00,David Miller,North America
+1015,7,Savings,Commercial Banking,Active,6000000.00,2018-05-20,2024-01-15,0.025,0.00,David Miller,North America
+1016,8,Investment,Wealth Management,Active,50000000.00,2017-08-12,2024-01-15,0.04,0.00,Jennifer Garcia,North America
+1017,9,Checking,Small Business Banking,Active,75000.00,2022-01-25,2024-01-12,0.01,5000.00,Christopher Lee,North America
+1018,9,Savings,Small Business Banking,Active,150000.00,2022-01-25,2024-01-12,0.02,0.00,Christopher Lee,North America
+1019,10,Checking,Small Business Banking,Active,400000.00,2020-04-18,2024-01-15,0.01,20000.00,Amanda Rodriguez,North America
+1020,10,Savings,Small Business Banking,Active,800000.00,2020-04-18,2024-01-15,0.02,0.00,Amanda Rodriguez,North America
+1021,11,Checking,Commercial Banking,Active,3750000.00,2019-07-30,2024-01-14,0.01,200000.00,Thomas Anderson,Asia Pacific
+1022,11,Savings,Commercial Banking,Active,7500000.00,2019-07-30,2024-01-14,0.025,0.00,Thomas Anderson,Asia Pacific
+1023,12,Checking,Commercial Banking,Active,2000000.00,2020-11-05,2024-01-13,0.01,100000.00,Nicole Martinez,North America
+1024,12,Loan,Commercial Banking,Active,-8000000.00,2020-11-05,2024-01-13,0.055,0.00,Nicole Martinez,North America
+1025,13,Checking,Retail Banking,Active,500000.00,2019-02-14,2024-01-15,0.01,25000.00,Kevin Thompson,North America
+1026,13,Savings,Retail Banking,Active,1000000.00,2019-02-14,2024-01-15,0.025,0.00,Kevin Thompson,North America
+1027,13,Investment,Retail Banking,Active,1000000.00,2019-02-14,2024-01-15,0.035,0.00,Kevin Thompson,North America
+1028,14,Checking,Small Business Banking,Active,50000.00,2023-03-08,2024-01-10,0.01,3000.00,Rachel White,North America
+1029,14,Savings,Small Business Banking,Active,100000.00,2023-03-08,2024-01-10,0.02,0.00,Rachel White,North America
+1030,15,Checking,Commercial Banking,Active,5000000.00,2016-12-01,2024-01-15,0.01,250000.00,Daniel Clark,North America
+1031,15,Savings,Commercial Banking,Active,10000000.00,2016-12-01,2024-01-15,0.025,0.00,Daniel Clark,North America
+1032,15,Investment,Commercial Banking,Active,10000000.00,2016-12-01,2024-01-15,0.035,0.00,Daniel Clark,North America
+1033,16,Checking,Commercial Banking,Active,3000000.00,2019-09-22,2024-01-14,0.01,150000.00,Sophia Lewis,Europe
+1034,16,Savings,Commercial Banking,Active,6000000.00,2019-09-22,2024-01-14,0.025,0.00,Sophia Lewis,Europe
+1035,17,Checking,Commercial Banking,Active,1500000.00,2020-02-28,2024-01-15,0.01,75000.00,James Hall,North America
+1036,17,Savings,Commercial Banking,Active,3000000.00,2020-02-28,2024-01-15,0.025,0.00,James Hall,North America
+1037,18,Investment,Wealth Management,Active,75000000.00,2017-04-15,2024-01-15,0.04,0.00,Emily Allen,North America
+1038,19,Checking,Small Business Banking,Active,70000.00,2021-11-12,2024-01-11,0.01,4000.00,Matthew Young,North America
+1039,19,Savings,Small Business Banking,Active,140000.00,2021-11-12,2024-01-11,0.02,0.00,Matthew Young,North America
+1040,20,Checking,Commercial Banking,Active,5000000.00,2018-10-03,2024-01-15,0.01,250000.00,Ashley King,North America
+1041,20,Savings,Commercial Banking,Active,10000000.00,2018-10-03,2024-01-15,0.025,0.00,Ashley King,North America
+1042,21,Checking,Small Business Banking,Active,360000.00,2020-07-19,2024-01-13,0.01,18000.00,Jonathan Wright,North America
+1043,21,Loan,Small Business Banking,Active,-1800000.00,2020-07-19,2024-01-13,0.065,0.00,Jonathan Wright,North America
+1044,22,Checking,Small Business Banking,Active,160000.00,2021-04-05,2024-01-14,0.01,8000.00,Lauren Scott,North America
+1045,22,Savings,Small Business Banking,Active,320000.00,2021-04-05,2024-01-14,0.02,0.00,Lauren Scott,North America
+1046,23,Checking,Commercial Banking,Active,7500000.00,2018-01-30,2024-01-15,0.01,375000.00,Ryan Green,North America
+1047,23,Savings,Commercial Banking,Active,15000000.00,2018-01-30,2024-01-15,0.025,0.00,Ryan Green,North America
+1048,24,Investment,Wealth Management,Active,100000000.00,2015-06-12,2024-01-15,0.04,0.00,Stephanie Baker,North America
+1049,25,Checking,Commercial Banking,Active,3750000.00,2019-05-08,2024-01-15,0.01,187500.00,Andrew Adams,North America
+1050,25,Savings,Commercial Banking,Active,7500000.00,2019-05-08,2024-01-15,0.025,0.00,Andrew Adams,North America 
