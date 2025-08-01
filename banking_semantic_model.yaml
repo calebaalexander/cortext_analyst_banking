@@ -1,0 +1,509 @@
+# Banking Semantic Model for Cortex Analyst
+# Unified model for analyzing banking customers, accounts, transactions, and loans
+
+version: "1.0"
+name: "banking_semantic_model"
+description: "Unified model for analyzing banking customers, accounts, transactions, and loans"
+
+# Logical Tables
+logical_tables:
+  - name: "customer_dim"
+    description: "Customer information and segmentation"
+    synonyms: ["customers", "clients", "account_holders", "customer_data"]
+    primary_key: "customer_id"
+    columns:
+      - name: "customer_id"
+        description: "Unique customer identifier"
+        synonyms: ["customer_number", "client_id", "account_holder_id"]
+        data_type: "NUMBER"
+      - name: "customer_name"
+        description: "Customer or company name"
+        synonyms: ["client_name", "account_holder", "customer", "company_name"]
+        data_type: "VARCHAR"
+      - name: "customer_type"
+        description: "Type of customer (Retail, Corporate, Small Business, Wealth Management)"
+        synonyms: ["client_type", "customer_segment", "account_type", "customer_category"]
+        data_type: "VARCHAR"
+      - name: "customer_segment"
+        description: "Customer segment classification"
+        synonyms: ["segment", "tier", "customer_category", "client_segment"]
+        data_type: "VARCHAR"
+      - name: "region"
+        description: "Geographic region"
+        synonyms: ["location", "geography", "territory"]
+        data_type: "VARCHAR"
+      - name: "risk_tier"
+        description: "Risk classification (Low, Medium, High)"
+        synonyms: ["risk_level", "credit_risk", "risk_category", "risk_rating"]
+        data_type: "VARCHAR"
+      - name: "industry_sector"
+        description: "Industry sector classification"
+        synonyms: ["industry", "sector", "business_sector", "market_sector"]
+        data_type: "VARCHAR"
+      - name: "total_assets"
+        description: "Total customer assets"
+        synonyms: ["assets", "total_wealth", "customer_assets", "portfolio_value"]
+        data_type: "NUMBER"
+      - name: "credit_score"
+        description: "Customer credit score"
+        synonyms: ["credit_rating", "credit_worthiness", "risk_score"]
+        data_type: "NUMBER"
+      - name: "account_open_date"
+        description: "Date when first account was opened"
+        synonyms: ["open_date", "start_date", "relationship_start"]
+        data_type: "DATE"
+      - name: "last_activity_date"
+        description: "Date of last customer activity"
+        synonyms: ["last_activity", "recent_activity", "last_interaction"]
+        data_type: "DATE"
+      - name: "status"
+        description: "Customer status (Active, Inactive, etc.)"
+        synonyms: ["customer_status", "account_status", "relationship_status"]
+        data_type: "VARCHAR"
+
+  - name: "account_dim"
+    description: "Account details and balances"
+    synonyms: ["accounts", "banking_accounts", "customer_accounts", "account_data"]
+    primary_key: "account_id"
+    columns:
+      - name: "account_id"
+        description: "Unique account identifier"
+        synonyms: ["account_number", "account_code"]
+        data_type: "STRING"
+      - name: "customer_id"
+        description: "Customer who owns this account"
+        synonyms: ["customer_number", "client_id"]
+        data_type: "NUMBER"
+      - name: "account_type"
+        description: "Type of account (Checking, Savings, Loan, Investment, Trust)"
+        synonyms: ["product_type", "account_product", "banking_product", "account_category"]
+        data_type: "VARCHAR"
+      - name: "product_line"
+        description: "Product line classification"
+        synonyms: ["business_line", "product_category", "service_line", "banking_line"]
+        data_type: "VARCHAR"
+      - name: "account_status"
+        description: "Account status (Active, Inactive, Closed)"
+        synonyms: ["status", "account_state", "relationship_status"]
+        data_type: "VARCHAR"
+      - name: "balance"
+        description: "Current account balance"
+        synonyms: ["account_balance", "current_balance", "funds", "available_balance"]
+        data_type: "NUMBER"
+      - name: "open_date"
+        description: "Date when account was opened"
+        synonyms: ["account_open_date", "start_date", "opening_date"]
+        data_type: "DATE"
+      - name: "last_transaction_date"
+        description: "Date of last transaction"
+        synonyms: ["last_activity", "recent_transaction", "last_activity_date"]
+        data_type: "DATE"
+      - name: "interest_rate"
+        description: "Account interest rate"
+        synonyms: ["rate", "interest", "yield", "return_rate"]
+        data_type: "NUMBER"
+      - name: "overdraft_limit"
+        description: "Overdraft protection limit"
+        synonyms: ["overdraft", "credit_limit", "protection_limit"]
+        data_type: "NUMBER"
+      - name: "account_manager"
+        description: "Account manager name"
+        synonyms: ["manager", "relationship_manager", "banker", "advisor"]
+        data_type: "VARCHAR"
+      - name: "region"
+        description: "Geographic region"
+        synonyms: ["location", "geography", "territory"]
+        data_type: "VARCHAR"
+
+  - name: "transaction_fact"
+    description: "Transaction history and activity"
+    synonyms: ["transactions", "transaction_history", "banking_transactions", "activity_log"]
+    primary_key: "transaction_id"
+    columns:
+      - name: "transaction_id"
+        description: "Unique transaction identifier"
+        synonyms: ["transaction_number", "txn_id", "reference_id"]
+        data_type: "STRING"
+      - name: "account_id"
+        description: "Account involved in transaction"
+        synonyms: ["account_number", "account_code"]
+        data_type: "STRING"
+      - name: "customer_id"
+        description: "Customer involved in transaction"
+        synonyms: ["customer_number", "client_id"]
+        data_type: "NUMBER"
+      - name: "transaction_date"
+        description: "Date of transaction"
+        synonyms: ["date", "txn_date", "activity_date"]
+        data_type: "DATE"
+      - name: "transaction_type"
+        description: "Type of transaction (Deposit, Withdrawal, Payment, etc.)"
+        synonyms: ["transaction_category", "activity_type", "transaction_kind", "txn_type"]
+        data_type: "VARCHAR"
+      - name: "amount"
+        description: "Transaction amount"
+        synonyms: ["transaction_amount", "transfer_amount", "payment_amount", "txn_amount"]
+        data_type: "NUMBER"
+      - name: "description"
+        description: "Transaction description"
+        synonyms: ["txn_description", "notes", "memo", "details"]
+        data_type: "VARCHAR"
+      - name: "merchant_category"
+        description: "Merchant category code"
+        synonyms: ["merchant_type", "category", "mcc", "business_category"]
+        data_type: "VARCHAR"
+      - name: "transaction_status"
+        description: "Transaction status (Completed, Pending, Failed)"
+        synonyms: ["status", "txn_status", "state"]
+        data_type: "VARCHAR"
+      - name: "reference_number"
+        description: "External reference number"
+        synonyms: ["reference", "ref_number", "external_id"]
+        data_type: "VARCHAR"
+      - name: "channel"
+        description: "Transaction channel (Online, Branch, ATM, etc.)"
+        synonyms: ["transaction_channel", "payment_method", "access_channel", "channel_type"]
+        data_type: "VARCHAR"
+      - name: "region"
+        description: "Geographic region"
+        synonyms: ["location", "geography", "territory"]
+        data_type: "VARCHAR"
+
+  - name: "loan_portfolio_fact"
+    description: "Loan data with risk metrics"
+    synonyms: ["loans", "loan_portfolio", "lending_data", "credit_data"]
+    primary_key: "loan_id"
+    columns:
+      - name: "loan_id"
+        description: "Unique loan identifier"
+        synonyms: ["loan_number", "credit_id", "facility_id"]
+        data_type: "NUMBER"
+      - name: "customer_id"
+        description: "Customer who took the loan"
+        synonyms: ["customer_number", "client_id", "borrower_id"]
+        data_type: "NUMBER"
+      - name: "account_id"
+        description: "Associated account (if any)"
+        synonyms: ["account_number", "account_code"]
+        data_type: "STRING"
+      - name: "loan_type"
+        description: "Type of loan"
+        synonyms: ["credit_type", "facility_type", "loan_category"]
+        data_type: "VARCHAR"
+      - name: "loan_amount"
+        description: "Original loan amount"
+        synonyms: ["credit_amount", "borrowed_amount", "principal", "original_balance"]
+        data_type: "NUMBER"
+      - name: "outstanding_balance"
+        description: "Current outstanding balance"
+        synonyms: ["remaining_balance", "unpaid_balance", "loan_balance", "current_balance"]
+        data_type: "NUMBER"
+      - name: "interest_rate"
+        description: "Annual interest rate"
+        synonyms: ["rate", "loan_rate", "credit_rate", "interest"]
+        data_type: "NUMBER"
+      - name: "origination_date"
+        description: "When loan was originated"
+        synonyms: ["start_date", "loan_start", "origination"]
+        data_type: "DATE"
+      - name: "maturity_date"
+        description: "When loan matures"
+        synonyms: ["end_date", "due_date", "maturity"]
+        data_type: "DATE"
+      - name: "payment_frequency"
+        description: "Payment schedule"
+        synonyms: ["frequency", "payment_schedule", "repayment_frequency"]
+        data_type: "VARCHAR"
+      - name: "collateral_value"
+        description: "Value of collateral"
+        synonyms: ["collateral", "security_value", "asset_value"]
+        data_type: "NUMBER"
+      - name: "risk_tier"
+        description: "Risk classification"
+        synonyms: ["risk_level", "credit_risk", "risk_category"]
+        data_type: "VARCHAR"
+      - name: "loan_status"
+        description: "Current loan status"
+        synonyms: ["status", "loan_state", "facility_status"]
+        data_type: "VARCHAR"
+      - name: "days_past_due"
+        description: "Days past due (if any)"
+        synonyms: ["past_due", "delinquency", "overdue_days"]
+        data_type: "NUMBER"
+      - name: "industry_sector"
+        description: "Borrower's industry"
+        synonyms: ["industry", "sector", "business_sector"]
+        data_type: "VARCHAR"
+      - name: "region"
+        description: "Geographic region"
+        synonyms: ["location", "geography", "territory"]
+        data_type: "VARCHAR"
+
+# Metrics
+metrics:
+  # Customer Metrics
+  - name: "total_customers"
+    expression: "COUNT(DISTINCT customer_id)"
+    description: "Total number of unique customers"
+    synonyms: ["customer_count", "client_count", "account_holders"]
+    logical_table: "customer_dim"
+
+  - name: "high_value_customers"
+    expression: "COUNT_IF(total_assets > 1000000)"
+    description: "Number of customers with assets over $1M"
+    synonyms: ["premium_customers", "high_net_worth", "affluent_customers"]
+    logical_table: "customer_dim"
+
+  # Account Metrics
+  - name: "total_accounts"
+    expression: "COUNT(DISTINCT account_id)"
+    description: "Total number of accounts"
+    synonyms: ["account_count", "banking_accounts"]
+    logical_table: "account_dim"
+
+  - name: "total_balance"
+    expression: "SUM(balance)"
+    description: "Total balance across all accounts"
+    synonyms: ["total_funds", "total_deposits", "total_assets"]
+    logical_table: "account_dim"
+
+  # Transaction Metrics
+  - name: "total_transactions"
+    expression: "COUNT(DISTINCT transaction_id)"
+    description: "Total number of transactions"
+    synonyms: ["transaction_count", "activity_count"]
+    logical_table: "transaction_fact"
+
+  - name: "total_transaction_volume"
+    expression: "SUM(amount)"
+    description: "Total transaction volume"
+    synonyms: ["transaction_volume", "payment_volume"]
+    logical_table: "transaction_fact"
+
+  # Loan Metrics
+  - name: "total_loan_exposure"
+    expression: "SUM(outstanding_balance)"
+    description: "Total outstanding loan balance"
+    synonyms: ["loan_portfolio", "credit_exposure", "total_lending"]
+    logical_table: "loan_portfolio_fact"
+
+  - name: "average_loan_size"
+    expression: "AVG(loan_amount)"
+    description: "Average loan amount"
+    synonyms: ["avg_loan", "typical_loan_size"]
+    logical_table: "loan_portfolio_fact"
+
+  # Advanced Metrics
+  - name: "customer_utilization_rate"
+    expression: "(SUM(outstanding_balance) / SUM(loan_amount)) * 100"
+    description: "Average loan utilization rate"
+    synonyms: ["utilization", "credit_utilization", "loan_usage"]
+    logical_table: "loan_portfolio_fact"
+
+  - name: "transaction_frequency"
+    expression: "COUNT(transaction_id) / COUNT(DISTINCT customer_id)"
+    description: "Average transactions per customer"
+    synonyms: ["activity_rate", "transaction_rate"]
+    logical_table: "transaction_fact"
+
+# Named Filters
+named_filters:
+  # Risk-Based Filters
+  - name: "high_risk_customers"
+    expression: "risk_tier = 'High'"
+    description: "Customers with high risk tier"
+    synonyms: ["high_risk", "elevated_risk", "risky_customers"]
+    logical_table: "customer_dim"
+
+  - name: "low_risk_customers"
+    expression: "risk_tier = 'Low'"
+    description: "Customers with low risk tier"
+    synonyms: ["low_risk", "safe_customers", "low_risk_tier"]
+    logical_table: "customer_dim"
+
+  # Customer Segment Filters
+  - name: "retail_customers"
+    expression: "customer_type = 'Retail'"
+    description: "Retail banking customers"
+    synonyms: ["retail", "personal_banking", "individual_customers"]
+    logical_table: "customer_dim"
+
+  - name: "commercial_customers"
+    expression: "customer_type IN ('Corporate', 'Small Business')"
+    description: "Commercial banking customers"
+    synonyms: ["commercial", "business_customers", "corporate_clients"]
+    logical_table: "customer_dim"
+
+  # Account Type Filters
+  - name: "checking_accounts"
+    expression: "account_type = 'Checking'"
+    description: "Checking accounts only"
+    synonyms: ["checking", "demand_deposits", "transaction_accounts"]
+    logical_table: "account_dim"
+
+  - name: "savings_accounts"
+    expression: "account_type = 'Savings'"
+    description: "Savings accounts only"
+    synonyms: ["savings", "deposit_accounts", "time_deposits"]
+    logical_table: "account_dim"
+
+  # Time-Based Filters
+  - name: "current_month"
+    expression: "transaction_date >= DATE_TRUNC('month', CURRENT_DATE())"
+    description: "Transactions in current month"
+    synonyms: ["this_month", "current_period"]
+    logical_table: "transaction_fact"
+
+  - name: "last_quarter"
+    expression: "transaction_date >= DATEADD(month, -3, CURRENT_DATE())"
+    description: "Transactions in last 3 months"
+    synonyms: ["past_quarter", "last_3_months"]
+    logical_table: "transaction_fact"
+
+  # Business Logic Filters
+  - name: "high_value_transactions"
+    expression: "ABS(amount) > 100000"
+    description: "Transactions over $100,000"
+    synonyms: ["large_transactions", "significant_transfers"]
+    logical_table: "transaction_fact"
+
+  - name: "active_customers"
+    expression: "COUNT(transaction_id) > 5"
+    description: "Customers with more than 5 transactions"
+    synonyms: ["engaged_customers", "active_users"]
+    logical_table: "transaction_fact"
+
+# Relationships
+relationships:
+  # Link customers to their accounts
+  - name: "customer_to_accounts"
+    join_type: "inner"
+    relationship_type: "one_to_many"
+    left_table: "customer_dim"
+    right_table: "account_dim"
+    relationship_columns:
+      - left_column: "customer_id"
+        right_column: "customer_id"
+
+  # Link accounts to transactions
+  - name: "account_to_transactions"
+    join_type: "inner"
+    relationship_type: "one_to_many"
+    left_table: "account_dim"
+    right_table: "transaction_fact"
+    relationship_columns:
+      - left_column: "account_id"
+        right_column: "account_id"
+
+  # Link customers to loans
+  - name: "customer_to_loans"
+    join_type: "inner"
+    relationship_type: "one_to_many"
+    left_table: "customer_dim"
+    right_table: "loan_portfolio_fact"
+    relationship_columns:
+      - left_column: "customer_id"
+        right_column: "customer_id"
+
+# Verified Queries
+verified_queries:
+  - name: "customer_segment_analysis"
+    question: "What is the distribution of customers by segment and their average assets?"
+    sql: |
+      SELECT
+        customer_segment,
+        COUNT(*) as customer_count,
+        AVG(total_assets) as avg_assets
+      FROM customer_dim
+      GROUP BY customer_segment
+      ORDER BY avg_assets DESC
+      LIMIT 1000
+
+  - name: "account_balance_by_type"
+    question: "What is the total balance by account type?"
+    sql: |
+      SELECT
+        account_type,
+        COUNT(*) as account_count,
+        SUM(balance) as total_balance
+      FROM account_dim
+      GROUP BY account_type
+      ORDER BY total_balance DESC
+      LIMIT 1000
+
+  - name: "transaction_volume_by_channel"
+    question: "What is the transaction volume by channel?"
+    sql: |
+      SELECT
+        channel,
+        COUNT(*) as transaction_count,
+        SUM(amount) as total_volume
+      FROM transaction_fact
+      GROUP BY channel
+      ORDER BY total_volume DESC
+      LIMIT 1000
+
+  - name: "loan_exposure_by_risk"
+    question: "What is our loan exposure by risk tier?"
+    sql: |
+      SELECT
+        risk_tier,
+        COUNT(*) as loan_count,
+        SUM(outstanding_balance) as total_exposure
+      FROM loan_portfolio_fact
+      GROUP BY risk_tier
+      ORDER BY total_exposure DESC
+      LIMIT 1000
+
+  - name: "customer_360_view"
+    question: "Show me a comprehensive customer view with accounts, transactions, and loans"
+    sql: |
+      SELECT
+        c.customer_name,
+        c.customer_type,
+        c.customer_segment,
+        c.total_assets,
+        c.credit_score,
+        COUNT(DISTINCT a.account_id) as total_accounts,
+        SUM(a.balance) as total_balance,
+        COUNT(DISTINCT t.transaction_id) as total_transactions,
+        COUNT(DISTINCT l.loan_id) as total_loans,
+        SUM(l.outstanding_balance) as total_loan_exposure
+      FROM customer_dim c
+      LEFT JOIN account_dim a ON c.customer_id = a.customer_id
+      LEFT JOIN transaction_fact t ON a.account_id = t.account_id
+      LEFT JOIN loan_portfolio_fact l ON c.customer_id = l.customer_id
+      GROUP BY c.customer_name, c.customer_type, c.customer_segment, c.total_assets, c.credit_score
+      ORDER BY c.total_assets DESC
+      LIMIT 1000
+
+  - name: "risk_analysis"
+    question: "Which customers have high assets but low credit scores?"
+    sql: |
+      SELECT
+        customer_name,
+        customer_type,
+        total_assets,
+        credit_score,
+        risk_tier
+      FROM customer_dim
+      WHERE total_assets > 1000000 AND credit_score < 700
+      ORDER BY total_assets DESC
+      LIMIT 1000
+
+# Custom Instructions
+custom_instructions: |
+  - Always use LEFT JOIN when combining customer data with transactions to preserve customers with no activity
+  - Round all monetary values to two decimal places for consistent currency formatting
+  - When calculating risk metrics, use the risk_tier column for categorization
+  - For customer analysis, always include customer_type and customer_segment for proper segmentation
+  - When showing loan data, include both loan_amount and outstanding_balance for complete picture
+  - Limit results to 1000 rows for ad-hoc queries to prevent overwhelming responses
+  - Use proper date formatting (YYYY-MM-DD) for all date fields
+  - When calculating averages, exclude NULL values to ensure accurate metrics
+  - For transaction analysis, consider both positive (deposits) and negative (withdrawals) amounts
+  - When showing account balances, distinguish between positive (assets) and negative (liabilities) values
+  - For loan analysis, include utilization rate (outstanding_balance / loan_amount) when relevant
+  - Use industry_sector for industry-based analysis and region for geographic analysis
+  - When calculating customer metrics, ensure proper deduplication using DISTINCT
+  - For time-based analysis, use transaction_date for transaction data and account_open_date for customer data 
